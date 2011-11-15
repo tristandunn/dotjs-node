@@ -1,0 +1,11 @@
+{ "name"        : "dotjs-node",
+  "version"     : "0.1.0",
+  "description" : "~/.js using node.",
+  "permissions" : ["tabs"],
+  "content_scripts" : [{
+    "js"         : ["js/zepto.min.js", "js/dotjs-node.js"],
+    "run_at"     : "document_start",
+    "matches"    : ["http://*/*", "https://*/*"],
+    "all_frames" : true
+  }]
+}

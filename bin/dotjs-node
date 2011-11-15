@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var File = require("fs"),
+    HTTP = require("http"),
+    Path = require("path");
+
+var ROOT    = Path.join(process.env["HOME"], ".js"),
+    DEFAULT = Path.join(ROOT, "default.js");
+
+HTTP.createServer(function(request, response) {
+  var file = Path.join(ROOT, request.url.replace("/", ""));
+
+  File.readFile(DEFAULT, "utf8", function(error, defaultFile) {
+    File.readFile(file, "utf8", function(error, domainFile) {
+      var contents = [defaultFile || "",
+                      domainFile  || ""].join("\n").trim();
+
+      response.writeHead(contents === "" ? 204 : 200, {
+        "Content-Type"   : "text/javascript",
+        "Content-Length" : Buffer.byteLength(contents)
+      });
+      response.end(contents);
+    });
+  });
+}).listen(3131);
