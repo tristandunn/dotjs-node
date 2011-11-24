@@ -6,7 +6,13 @@
 
 * Written in node.js instead of Ruby.
 * Uses [Zepto](https://github.com/madrobby/zepto) v0.8 instead of jQuery.
-* **Coming soon:** Installed and uninstalled via NPM.
+* Installed and uninstalled via NPM.
+
+## Installation
+
+    npm install dotjs --global
+
+**Note:** The installer is currently only fully supported on OS X. Support for other platforms is welcomed.
 
 ## License
 

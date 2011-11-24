@@ -1,0 +1,23 @@
+{ "name"        : "dotjs",
+  "version"     : "0.1.0",
+  "description" : "~/.js using node.",
+  "keywords"    : ["chrome", "dotjs"],
+  "homepage"    : "https://github.com/tristandunn/dotjs-node",
+  "author"      : "Tristan Dunn <hello@tristandunn.com> (http://tristandunn.com)",
+  "bugs"        : {
+    "url"  : "https://github.com/tristandunn/dotjs-node/issues",
+    "mail" : "hello@tristandunn.com"
+  },
+  "licenses" : [{
+    "type" : "MIT",
+    "url"  : "https://github.com/tristandunn/dotjs-node/blob/master/LICENSE"
+  }],
+  "repository" : {
+    "type" : "git",
+    "url"  : "git://github.com/tristandunn/dotjs-node.git"
+  },
+  "scripts" : {
+    "postinstall"   : "node script/install.js",
+    "postuninstall" : "node script/uninstall.js"
+  }
+}
