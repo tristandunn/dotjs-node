@@ -5,7 +5,7 @@
 ## Differences
 
 * Written in node.js instead of Ruby.
-* Uses [Zepto](https://github.com/madrobby/zepto) v0.8 instead of jQuery.
+* Uses [Zepto](https://github.com/madrobby/zepto) v1.0rc1 instead of jQuery.
 * Installed and uninstalled via NPM.
 
 ## Installation
