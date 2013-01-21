@@ -1,13 +1,18 @@
 #!/usr/bin/env node
 
 var File = require("fs"),
-    HTTP = require("http"),
+    HTTP = require("https"),
     Path = require("path");
+
+var options = {
+  key  : File.readFileSync(__dirname + "/private.pem"),
+  cert : File.readFileSync(__dirname + "/public.pem")
+};
 
 var ROOT    = Path.join(process.env["HOME"], ".js"),
     DEFAULT = Path.join(ROOT, "default.js");
 
-HTTP.createServer(function(request, response) {
+HTTP.createServer(options, function(request, response) {
   var file = Path.join(ROOT, request.url.replace("/", ""));
 
   File.readFile(DEFAULT, "utf8", function(error, defaultFile) {
