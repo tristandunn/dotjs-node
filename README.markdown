@@ -12,8 +12,6 @@
 
     npm install dotjs --global
 
-**Note:** The installer is currently only fully supported on OS X. Support for other platforms is welcomed.
-
 ## License
 
 dotjs-node uses the MIT license. See LICENSE for more details.
